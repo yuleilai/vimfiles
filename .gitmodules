@@ -22,3 +22,6 @@
 [submodule ".\\bundle/delimitMate"]
 	path = .\\bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule ".\\bundle/TagHighlight"]
+	path = .\\bundle/TagHighlight
+	url = https://github.com/magic-dot-files/TagHighlight.git
