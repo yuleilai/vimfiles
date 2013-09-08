@@ -29,3 +29,7 @@ else
 endif
 colorscheme solarized
 "}}}
+
+"config syntastic {{{
+let g:syntastic_check_on_open=1
+"}}}
