@@ -15,3 +15,7 @@ nnoremap <silent> <s-backspace> :BD!<cr>
 au FileType nerdtree cnoreabbrev <buffer> bd <nop>
 au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 "}}}
+
+"config tagbar plugin {{{
+let Tlist_Use_Right_Window = 1
+"}}}
