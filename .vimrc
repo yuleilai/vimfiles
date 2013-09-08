@@ -1,3 +1,8 @@
+" VIM Configuration File
+" Author: yuleilai
+
+set nocompatible
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 syntax on
