@@ -19,3 +19,13 @@ au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 "config tagbar plugin {{{
 let Tlist_Use_Right_Window = 1
 "}}}
+
+"set colorscheme {{{
+syntax enable
+if has('gui_running')
+    set background=dark
+else
+    set background=light
+endif
+colorscheme solarized
+"}}}
