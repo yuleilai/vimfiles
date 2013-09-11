@@ -1,5 +1,8 @@
-" VIM Configuration File
-" Author: yuleilai
+"==================================================
+" File:         .vimrc
+" Author:       yuleilai
+" Description:  vim configuration file
+"==================================================
 
 set nocompatible
 
@@ -9,13 +12,16 @@ syntax on
 filetype plugin indent on
 
 
-"set gvim fullscreen
-au GUIEnter * simalt ~x
+" set gvim fullscreen {{{
+if has("gui_running") && (has("win32") || has("win64"))
+    au GUIEnter * simalt ~x
+endif
+"}}}
 
 "set gui font to lucida console
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-if has("gui_running")
-	set guifont=Lucida\ console:h12
+if has("gui_running") && (has("win32") || has("win64"))
+	set guifont=Lucida\ console:h11
 endif
 
 "set the menu and the message to english
@@ -42,6 +48,7 @@ set incsearch                   " Display the match for a search pattern when ha
 set wildmenu                    " Command-line completion operates in an enhanced mode
 set equalprg=indent             " set the external program Vim should use for indentation when using the commands with =
 set ignorecase smartcase	    " Ignor case while searching when no upcase
+set laststatus=2                " Always show statusline
 set tags=tags;
 
 "[F1] Toggle Menu
@@ -67,17 +74,20 @@ map <C-l> <C-W>l
 
 map <silent> <C-n> :nohlsearch<cr>
 
-"nerdTree plugin config {{{
-" autocmd vimenter * NERDTree
-nmap <silent> <leader>n :NERDTreeToggle <CR>
-let NERDTreeShowHidden=1
-" bufkill bd's: really do not mess with NERDTree buffer
-nnoremap <silent> <backspace> :BD<cr>
-nnoremap <silent> <s-backspace> :BD!<cr>
+" remap leader key{{{
+let mapleader=','
+"}}}
 
-" Prevent :bd inside NERDTree buffer
-au FileType nerdtree cnoreabbrev <buffer> bd <nop>
-au FileType nerdtree cnoreabbrev <buffer> BD <nop>
+"map leader 1 for display cursorline {{{
+nnoremap <Leader>1 :set cursorline! cursorcolumn!<CR>
+"}}}
+
+" nerdTree plugin config {{{
+let NERDChristmasTree=1
+let NERDTreeShowBookmarks=1
+let NERDTreeQuitOnOpen=1
+
+nmap <silent> <leader>n :NERDTreeToggle <CR>
 "}}}
 
 
@@ -90,7 +100,7 @@ syntax enable
 if has('gui_running')
     set background=dark
 else
-    set background=dark
+    set background=light
 endif
 colorscheme solarized
 "}}}
