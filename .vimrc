@@ -4,11 +4,12 @@
 " Description:  vim configuration file
 "==================================================
 
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
 
 
@@ -17,11 +18,14 @@ if has("gui_running") && (has("win32") || has("win64"))
     au GUIEnter * simalt ~x
 endif
 "}}}
+set t_Co=256 
+set encoding=utf-8
+let g:Powerline_symbols='fancy'
 
 "set gui font to lucida console
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 if has("gui_running") && (has("win32") || has("win64"))
-	set guifont=Lucida\ console:h11
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11,DejaVu\ Sans\ Mono:h12,Menlo\ Regular\ for\ Powerline:h12,Lucida\ console:h11,Monaco:h13
 endif
 
 "set the menu and the message to english
@@ -30,7 +34,6 @@ let $LANG='en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-set nocompatible                " Use Vim defaults (much better!)
 set nobackup                    " set no backup
 set bs=indent,eol,start         " allow backspacing over everything in insert mode
 set viminfo='20,\"50            " read/write a .viminfo file, don't store more
@@ -102,7 +105,7 @@ if has('gui_running')
 else
     set background=light
 endif
-colorscheme solarized
+colorscheme molokai
 "}}}
 
 
