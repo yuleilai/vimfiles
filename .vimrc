@@ -60,7 +60,7 @@ set guioptions-=T
 set guioptions-=L
 set guioptions-=r
 set guioptions-=b
-set showtabline=0
+"set showtabline=0
 map <silent> <F1> :if &guioptions =~# 'm' <Bar>
         \set guioptions-=m <Bar>
     \else <Bar>
@@ -88,7 +88,7 @@ nnoremap <Leader>1 :set cursorline! cursorcolumn!<CR>
 " nerdTree plugin config {{{
 let NERDChristmasTree=1
 let NERDTreeShowBookmarks=1
-let NERDTreeQuitOnOpen=1
+"let NERDTreeQuitOnOpen=1
 
 nmap <silent> <leader>n :NERDTreeToggle <CR>
 "}}}
