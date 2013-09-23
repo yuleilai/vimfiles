@@ -112,3 +112,18 @@ colorscheme molokai
 "config syntastic {{{
 let g:syntastic_check_on_open=1
 "}}}
+
+" ctrlp {{{
+nmap <leader>p :CtrlP <cr>
+let g:ctrlp_open_multiple_files = 'v'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_max_height = 100
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/]\.(git)$',
+            \ 'file': '\v\.(log|jpg|png|jpeg)$',
+            \ }
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*.o
+" }}}
+
