@@ -24,15 +24,16 @@ let g:Powerline_symbols='fancy'
 
 "set gui font to lucida console
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-if has("gui_running") && (has("win32") || has("win64"))
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11,DejaVu\ Sans\ Mono:h12,Menlo\ Regular\ for\ Powerline:h12,Lucida\ console:h11,Monaco:h13
+if has("gui_running")
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11,DejaVu\ Sans\ Mono:h12,Menlo\ Regular\ for\ Powerline:h12,Lucida\ console:h11,Monaco:h12
+    set guifont=YaHei\ Consolas\ Hybrid\ 12
 endif
 
 "set the menu and the message to english
-set langmenu=en_US
-let $LANG='en_US'
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
+"set langmenu=en_US
+"let $LANG='en_US'
+"source $VIMRUNTIME/delmenu.vim
+"source $VIMRUNTIME/menu.vim
 
 set nobackup                    " set no backup
 set bs=indent,eol,start         " allow backspacing over everything in insert mode
