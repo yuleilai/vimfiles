@@ -25,8 +25,12 @@ let g:Powerline_symbols='fancy'
 "set gui font to lucida console
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 if has("gui_running")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11,DejaVu\ Sans\ Mono:h12,Menlo\ Regular\ for\ Powerline:h12,Lucida\ console:h11,Monaco:h12
-    set guifont=YaHei\ Consolas\ Hybrid\ 12
+    if has("win32") || has("win64")
+        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+    else
+        set guifont=Monaco\ 10
+        set guifontwide=Yahei\ Consolas\ Hybrid\ 10
+    endif
 endif
 
 "set the menu and the message to english
@@ -53,6 +57,7 @@ set wildmenu                    " Command-line completion operates in an enhance
 set equalprg=indent             " set the external program Vim should use for indentation when using the commands with =
 set ignorecase smartcase	    " Ignor case while searching when no upcase
 set laststatus=2                " Always show statusline
+set cursorline
 set tags=tags;
 
 "[F1] Toggle Menu
@@ -77,14 +82,6 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l 
 
 map <silent> <C-n> :nohlsearch<cr>
-
-" remap leader key{{{
-let mapleader=','
-"}}}
-
-"map leader 1 for display cursorline {{{
-nnoremap <Leader>1 :set cursorline! cursorcolumn!<CR>
-"}}}
 
 " nerdTree plugin config {{{
 let NERDChristmasTree=1
@@ -118,13 +115,29 @@ let g:syntastic_check_on_open=1
 nmap <leader>p :CtrlP <cr>
 let g:ctrlp_open_multiple_files = 'v'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_max_height = 100
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.exe
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git)$',
-            \ 'file': '\v\.(log|jpg|png|jpeg)$',
+            \ 'dir':  '\v[\/]\.(git|svn|doc)$',
+            \ 'file': '\v\.(log|jpg|png|jpeg|bmp)$',
             \ }
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*.o
+set wildignore+=*.o,*.d
+" }}}
+
+" config you complete me {{{
+let g:ycm_global_ycm_extra_conf="/home/yuleilai/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
+" }}}
+
+" Jump to the last position{{{
+if has("autocmd")
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+endif
 " }}}
 
