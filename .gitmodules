@@ -43,3 +43,6 @@
 [submodule "bundle/mark.vim"]
 	path = bundle/mark.vim
 	url = https://github.com/Kris2k/mark.vim.git
+[submodule "bundle/a.vim"]
+	path = bundle/a.vim
+	url = https://github.com/vim-scripts/a.vim.git
