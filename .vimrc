@@ -88,7 +88,7 @@ let NERDChristmasTree=1
 let NERDTreeShowBookmarks=1
 "let NERDTreeQuitOnOpen=1
 
-nmap <silent> <leader>n :NERDTreeToggle <CR>
+nmap <silent> <leader>t :NERDTreeToggle <CR>
 "}}}
 
 
@@ -124,7 +124,7 @@ set wildignore+=*.o,*.d
 " }}}
 
 " config you complete me {{{
-let g:ycm_global_ycm_extra_conf="/home/yuleilai/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf="~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
 " }}}
 
 " Jump to the last position{{{
