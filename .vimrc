@@ -86,7 +86,7 @@ map <silent> <C-n> :nohlsearch<cr>
 " nerdTree plugin config {{{
 let NERDChristmasTree=1
 let NERDTreeShowBookmarks=1
-"let NERDTreeQuitOnOpen=1
+let NERDTreeIgnore=['doc$[[dir]]','.d$[[file]]','.o$[[file]]','.taghl$[[file]]','tags$[[file]]']
 
 nmap <silent> <leader>t :NERDTreeToggle <CR>
 "}}}
