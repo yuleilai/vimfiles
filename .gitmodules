@@ -37,9 +37,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "bundle/mark.vim"]
 	path = bundle/mark.vim
 	url = https://github.com/Kris2k/mark.vim.git

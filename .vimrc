@@ -123,10 +123,6 @@ let g:ctrlp_custom_ignore = {
 set wildignore+=*.o,*.d
 " }}}
 
-" config you complete me {{{
-let g:ycm_global_ycm_extra_conf="~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
-" }}}
-
 " Jump to the last position{{{
 if has("autocmd")
   " When editing a file, always jump to the last known cursor position.
