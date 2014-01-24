@@ -22,7 +22,7 @@ set t_Co=256
 set encoding=utf-8
 let g:Powerline_symbols='fancy'
 
-"set gui font to lucida console
+" set gui font
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 if has("gui_running")
     if has("win32") || has("win64")
@@ -33,11 +33,11 @@ if has("gui_running")
     endif
 endif
 
-"set the menu and the message to english
-"set langmenu=en_US
-"let $LANG='en_US'
-"source $VIMRUNTIME/delmenu.vim
-"source $VIMRUNTIME/menu.vim
+" set the menu and the message to english
+set langmenu=en_US
+let $LANG='en_US'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 
 set nobackup                    " set no backup
 set bs=indent,eol,start         " allow backspacing over everything in insert mode
@@ -92,7 +92,7 @@ nmap <silent> <leader>t :NERDTreeToggle <CR>
 "}}}
 
 
-"config tagbar plugin {{{
+" config tagbar plugin {{{
 let Tlist_Use_Right_Window = 1
 "}}}
 
