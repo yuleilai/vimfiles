@@ -24,6 +24,7 @@ vimfiles
 ###Create symlinks: 
     ln -s ~/.vim/.vimrc ~/.vimrc 
 ###Update submodule: 
+    cd ~/.vim
     git submodule init
     git submodule update
 
